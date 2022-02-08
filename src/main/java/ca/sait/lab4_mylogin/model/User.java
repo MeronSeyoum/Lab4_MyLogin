@@ -4,12 +4,12 @@
  */
 package ca.sait.lab4_mylogin.model;
 
-import java.beans.*;
+
 import java.io.Serializable;
 
 /**
  *
- * @author merya
+ * @author Meron Seyoum
  */
 public class User implements Serializable {
 

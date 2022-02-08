@@ -9,7 +9,7 @@ import ca.sait.lab4_mylogin.model.User;
 
 /**
  *
- * @author merya
+ * @author Meron seyoum
  */
 public class AccountService {
     
