@@ -34,10 +34,10 @@ public class LogInServlet extends HttpServlet {
 
             if (query != null && query.contains("logout")) {
                 session.invalidate();
-request.setAttribute("message", "user has successfully logged out.");
+                request.setAttribute("message", "user has successfully logged out.");
             } else {
                 response.sendRedirect("home");
-request.setAttribute("message", "");
+
                 return;
             }
         }

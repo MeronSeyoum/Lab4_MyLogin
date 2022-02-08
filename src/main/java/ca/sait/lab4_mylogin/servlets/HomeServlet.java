@@ -27,7 +27,7 @@ public class HomeServlet extends HttpServlet {
             throws ServletException, IOException {
 //.  If the user attempts to access /login and the session object username exists, redirect them to /home.  
 //If the user attempts to access /home directly and the session object username does not exist, redirect them to /login.       
- HttpSession session = request.getSession();
+        HttpSession session = request.getSession();
 
         String username = (String) session.getAttribute("username");
         if (username == null) {

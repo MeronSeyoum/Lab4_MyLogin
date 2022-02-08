@@ -9,15 +9,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-           <link rel="stylesheet"   type="text/css" href="Style/myLogin.css">
+        <link rel="stylesheet"   type="text/css" href="Style/myLogin.css">
         <title>Login Page</title>
     </head>
     <body>
         <div class="main">
-        <h1>Login</h1>
-        
+            <h1>Login</h1>
+
             <form action="login" method="post">
-                
+
                 <label for="username">Username</label>
                 <input  type="text" id="username" name="username"/>
                 <br>
@@ -25,9 +25,9 @@
                 <input type="password" id="password" name="password"/>
                 <br>
                 <button type="submit">Log In</button>
-                
+
             </form>
-             <p>${message}</p>
+            <p>${message}</p>
         </div>
     </body>
 </html>

@@ -4,7 +4,6 @@
  */
 package ca.sait.lab4_mylogin.model;
 
-
 import java.io.Serializable;
 
 /**
