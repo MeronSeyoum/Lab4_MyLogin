@@ -1,4 +1,3 @@
-
 package ca.sait.lab4_mylogin.servlets;
 
 import java.io.IOException;
@@ -14,7 +13,8 @@ import javax.servlet.http.HttpSession;
  * @author Meron Seyoum
  */
 public class HomeServlet extends HttpServlet {
-     /**
+
+    /**
      * Handles the HTTP <code>GET</code> method.
      *
      * @param request servlet request
@@ -25,7 +25,17 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+//.  If the user attempts to access /login and the session object username exists, redirect them to /home.  
+//If the user attempts to access /home directly and the session object username does not exist, redirect them to /login.       
+ HttpSession session = request.getSession();
+
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            response.sendRedirect("login");
+            return;
+        }
+        request.setAttribute("username", username);
+        getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
     }
 
     /**
@@ -39,20 +49,18 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       HttpSession session = request.getSession();
-        
+        HttpSession session = request.getSession();
+
         String username = (String) session.getAttribute("username");
-        
+
         if (username == null) {
             response.sendRedirect("login");
             return;
         }
-        
-        request.setAttribute("username", username);
-                
-         getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
-    }
-    
 
-    
+        request.setAttribute("username", username);
+
+        getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+    }
+
 }
