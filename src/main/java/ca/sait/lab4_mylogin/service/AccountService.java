@@ -21,7 +21,5 @@ public class AccountService {
         } else {
             return null;
         }
-    }
-
-    
+    }   
 }
